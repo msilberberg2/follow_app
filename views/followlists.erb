@@ -1,0 +1,27 @@
+<h3>All Followers of Carl</h3>
+<ul>
+<% @followers.each do |follower| %>
+	<li>
+		<%= follower.handle %>
+	</li>
+<% end %>
+</ul>
+
+<h3>All People Being Followed By Test2 Follower</h3>
+<ul>
+<% @followees.each do |followee| %>
+	<li>
+		<%= followee.handle %>
+	</li>
+<% end %>
+</ul>
+
+<h3>All Relationships</h3>
+<ul>
+<% @relationships.each do |relationship| %>
+	<li>
+		<%= relationship[0].handle %> follows <%= relationship[1].handle %>
+	</li>
+<% end %>
+</ul>
+<a href="/">Back to Home</a>
