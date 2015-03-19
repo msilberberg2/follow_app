@@ -33,6 +33,15 @@ get '/' do
 	end
 	erb :index
 end
+
+post '/delete' do
+	Follow.delete_all
+	@users = []
+	User.find_each do |user|
+		@users.push(user)
+	end
+	erb :index
+end
  
 post '/submit' do
 	rando = Random.rand(3)
