@@ -1,4 +1,4 @@
-class Follow_Relationship < ActiveRecord::Base
+class Follow < ActiveRecord::Base
 	belongs_to :followee, class_name: "User"
 	belongs_to :follower, class_name: "User"
 	
@@ -37,6 +37,6 @@ class Follow_Relationship < ActiveRecord::Base
 end
 
 #Add the following code to the User class.
-#has_many :followrelationships
-#has_many :followees, through: :followrelationships
-#has_many :followers, through: :followrelationships
+#has_many :follows
+#has_many :followees, through: :follows
+#has_many :followers, through: :follows
